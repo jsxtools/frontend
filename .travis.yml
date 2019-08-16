@@ -1,0 +1,16 @@
+# https://docs.travis-ci.com/user/travis-lint
+
+language: node_js
+
+env:
+  - CODECOV_TOKEN="58e75e5b-0566-45c3-b0a7-85d1a895a76c"
+
+node_js:
+  - 'lts/*'
+
+install:
+  - npm install --ignore-scripts
+  - npx lerna bootstrap --no-ci
+
+after_success:
+  - npx codecov

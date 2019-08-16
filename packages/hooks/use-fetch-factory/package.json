@@ -1,0 +1,29 @@
+{
+  "name": "@jsxtools/use-fetch-factory",
+  "version": "1.0.0",
+  "description": "...",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jsxtools/monorepo",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/use-fetch-factory#readme",
+  "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:use-fetch-factory",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@jsxtools/use-promise-factory": "^1"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.6.0",
+    "react": "^16.9.0",
+    "react-test-renderer": "^16.9.0"
+  }
+}

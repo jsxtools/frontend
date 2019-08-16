@@ -1,0 +1,21 @@
+{
+  "name": "@jsxtools/prevent-default",
+  "version": "1.0.0",
+  "description": "Returns a function that will invoke preventDefault on any events passed into it.",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jsxtools/monorepo",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/prevent-default#readme",
+  "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:prevent-default",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

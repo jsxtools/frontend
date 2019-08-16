@@ -1,0 +1,21 @@
+{
+  "name": "@jsxtools/get-form-data",
+  "version": "1.0.0",
+  "description": "...",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jsxtools/monorepo",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/get-form-data#readme",
+  "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:get-form-data",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
