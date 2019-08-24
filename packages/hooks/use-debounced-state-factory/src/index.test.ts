@@ -4,7 +4,7 @@ import { act, create } from 'react-test-renderer';
 
 describe('use-debounced-state', () => {
 	const useDebounce = useDebouncedStateFactory({ useState });
-	const wrapper = create();
+	const wrapper = create(null);
 	let listenerSpy = jest.fn();
 	let rendererSpy = jest.fn();
 	let scopedState: any;

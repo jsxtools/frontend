@@ -5,27 +5,22 @@ import nodeFetch from 'node-fetch';
 
 describe('use-equal-state-factory', () => {
 	let globalFetch: any;
-	let globalFetchPromise;
-	let globalFetchResolver;
+	let globalFetchPromise: Promise<Response>;
+	let globalFetchResolver: Fulfill<Response>;
 
 	beforeEach(() => {
 		globalFetchPromise = new Promise(_resolve => {
 			globalFetchResolver = _resolve;
 		});
 
-		globalFetchPromise.response = undefined;
-		globalFetchPromise.state = 'pending';
-
 		// @ts-ignore
-		global.fetch = function fetch(input, init) {
-			return nodeFetch(input, init).then(response => {
-				globalFetchPromise.state = 'fulfilled';
-				globalFetchPromise.response = response;
-				globalFetchResolver();
+		global.fetch = async function fetch(input: string, init?: object) {
+			return await nodeFetch(input, init).then(response => {
+				globalFetchResolver(undefined);
 
 				return response;
 			});
-		}
+		};
 	});
 
 	afterEach(() => {
@@ -35,7 +30,7 @@ describe('use-equal-state-factory', () => {
 
 	const useFetch = useFetchFactory({ useEffect, useState });
 	// const useFetchSpy = jest.fn();
-	let wrapper = create();
+	let wrapper = create(null);
 
 	test('fulfilling component: pending state', async () => {
 		act(() => {

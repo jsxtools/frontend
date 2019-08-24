@@ -1,45 +1,21 @@
 {
   "name": "monorepo",
+  "version": "0.0.0",
   "description": "A monorepo of tools",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "run-s build:*",
-    "build:dts": "lerna exec -- tsc --declaration --emitDeclarationOnly --outDir . src/index.ts",
-    "build:js": "lerna exec -- rollup --silent --config \"$(pwd)/rollup.config.js\"",
-    "postbuild:js": "npx lerna exec -- node \\$LERNA_ROOT_PATH/npm/update",
-    "create": "node npm/create",
-    "postinstall": "lerna bootstrap",
-    "test": "run-p test:*",
-    "test:lint": "eslint packages/*/*/src/{*,**/*}.ts --cache --ignore-path .gitignore --resolve-plugins-relative-to node_modules",
-    "pretest:jest": "npm run build:js",
-    "test:jest": "jest --coverage",
-    "watch": "run-p \"build:* -- --watch\"",
-    "watch:dts": "run-p build:dts -- --watch",
-    "watch:js": "run-p build:js -- --watch"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.17",
-    "@types/react": "^16.9.2",
-    "@typescript-eslint/parser": "^2.0.0",
-    "babel-jest": "^24.9.0",
-    "codecov": "^3.5.0",
-    "eslint": "^6.1.0",
-    "eslint-plugin-jest": "^22.15.1",
-    "gzip-size": "^5.1.1",
-    "husky": "^3.0.3",
-    "jest": "^24.9.0",
-    "lerna": "^3.16.4",
-    "lint-staged": "^9.2.1",
-    "npm-run-all": "^4.1.5",
-    "rollup": "^1.19.4",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-terser": "^5.1.1",
-    "typescript": "^3.5.3"
+    "bootstrap": "lerna bootstrap --hoist",
+    "build": "run-p build:*",
+    "build:dts": "node cmd/dts",
+    "build:rollup": "node cmd/rollup",
+    "create": "node cmd/create",
+    "publish": "run-s bootstrap build",
+    "postpublish": "lerna publish from-package",
+    "test": "run-s test:*",
+    "test:eslint": "node cmd/eslint",
+    "test:jest": "node cmd/jest",
+    "watch": "run-p 'test:* -- --watch'"
   },
   "eslintConfig": {
     "env": {
@@ -48,7 +24,9 @@
       "jest/globals": true,
       "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaVersion": 10,
@@ -59,7 +37,10 @@
     },
     "plugins": [
       "jest"
-    ]
+    ],
+    "rules": {
+      "no-prototype-builtins": 0
+    }
   },
   "husky": {
     "hooks": {
@@ -79,6 +60,54 @@
       "jest --findRelatedTests",
       "git add"
     ]
+  },
+  "dependencies": {
+    "@jsxtools/classes": "file:packages/utils/classes",
+    "@jsxtools/debounce": "file:packages/utils/debounce",
+    "@jsxtools/get-form-data": "file:packages/dom/get-form-data",
+    "@jsxtools/is-equal": "file:packages/utils/is-equal",
+    "@jsxtools/is-type": "file:packages/utils/is-type",
+    "@jsxtools/prevent-default": "file:packages/utils/prevent-default",
+    "@jsxtools/react-hooks": "file:packages/react/react-hooks",
+    "@jsxtools/uid": "file:packages/utils/uid",
+    "@jsxtools/use-debounced-state-factory": "file:packages/hooks/use-debounced-state-factory",
+    "@jsxtools/use-equal-state-factory": "file:packages/hooks/use-equal-state-factory",
+    "@jsxtools/use-fetch-factory": "file:packages/hooks/use-fetch-factory",
+    "@jsxtools/use-local-storage-factory": "file:packages/hooks/use-local-storage-factory",
+    "@jsxtools/use-promise-factory": "file:packages/hooks/use-promise-factory",
+    "@jsxtools/utils": "file:packages/utils/utils"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.18",
+    "@types/node-fetch": "^2.5.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-test-renderer": "^16.9.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "babel-jest": "^24.9.0",
+    "chokidar": "^3.0.2",
+    "codecov": "^3.5.0",
+    "eslint": "^6.2.2",
+    "eslint-plugin-jest": "^22.15.2",
+    "gzip-size": "^5.1.1",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lerna": "^3.16.4",
+    "lint-staged": "^9.2.3",
+    "miniglob": "^0.1.1",
+    "node-fetch": "^2.6.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
+    "rollup": "^1.20.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-dts": "^1.1.6",
+    "rollup-plugin-terser": "^5.1.1",
+    "typescript": "^3.5.3"
   },
   "private": true
 }

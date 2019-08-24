@@ -1,12 +1,3 @@
-declare type UseStateDispatch<S> = (state: S) => void;
-declare type UseStateAction<S> = S | ((prevState: S) => S);
-declare type UseStateTuple<S> = [S, UseStateDispatch<UseStateAction<S>>];
-declare type UseState = <S> (initialState: S | (() => S)) => UseStateTuple<S>;
-
-declare type HookList = {
-	useState: UseState
-};
-
 /**
 *
 * @param {Object} hooks An object containing hooks.

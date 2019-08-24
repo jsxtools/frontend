@@ -5,7 +5,7 @@
 [<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/use-fetch-factory.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:use-fetch-factory)
 [<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/use-fetch-factory.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:use-fetch-factory)
 
-**use-fetch-factory** generates a [hook] that provides a state and response or error of a [fetch].
+**use-fetch-factory** generates a [hook] that provides the state and settled response of a [fetch].
 
 It is <strong size>301 bytes</strong>.
 
@@ -35,5 +35,4 @@ function Component () {
 ```
 
 [fetch]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-
 [monorepo]: https://github.com/jsxtools/monorepo

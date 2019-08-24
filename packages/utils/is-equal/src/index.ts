@@ -1,13 +1,10 @@
-// equal types
-declare type EqualReturningFunction = (value1: any, value2: any) => boolean;
-
 /**
 * Returns whether two values are the same value.
 * @param {any} value1 The first value to compare.
 * @param {any} value2 The second value to compare.
 * @param {Function} [deepEqual] A function that returns whether two values in an object are the same value.
 */
-function isEqual (value1: any, value2: any, deepEqual?: EqualReturningFunction): boolean {
+function isEqual (value1: any, value2: any, deepEqual?: Equality): boolean {
 	deepEqual = deepEqual || Object.is;
 
 	if (Object.is(value1, value2)) {

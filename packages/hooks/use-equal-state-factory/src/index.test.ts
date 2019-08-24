@@ -7,7 +7,7 @@ describe('use-equal-state-factory', () => {
 	const listenerSpy = jest.fn();
 	const rendererSpy = jest.fn();
 	const same = { a: 1, b: 2, c: 3 };
-	const wrapper = create();
+	const wrapper = create(null);
 	let scopedState: any;
 
 	test('runs without updates', () => {

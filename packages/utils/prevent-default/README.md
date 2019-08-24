@@ -24,3 +24,5 @@ document.querySelector('form').addEventListener('submit', preventDefault(() => {
   // handle submission via JS without submission
 }));
 ```
+
+[monorepo]: https://github.com/jsxtools/monorepo

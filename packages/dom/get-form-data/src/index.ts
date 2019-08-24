@@ -1,35 +1,11 @@
-/** An HTML form control element that can be disabled */
-declare type HTMLHasDisabledPropertyElement = HTMLButtonElement | HTMLFieldSetElement | HTMLInputElement | HTMLLinkElement | HTMLOptGroupElement | HTMLOptionElement | HTMLSelectElement | HTMLTextAreaElement;
-
-/** An HTML form control element accessible from the elements property */
-declare type HTMLInFormElementsPropertyElement = HTMLButtonElement | HTMLFieldSetElement | HTMLInputElement | HTMLObjectElement | HTMLOutputElement | HTMLSelectElement | HTMLTextAreaElement;
-
-/** A collection of HTML form control elements. */
-declare interface HTMLFormControlsCollection {
-	[index: number]: HTMLInFormElementsPropertyElement
-}
-
-/** An HTML form element in the DOM; it allows access to and in some cases modification of aspects of the form, as well as access to its component elements. */
-declare interface HTMLFormElement {
-	elements: HTMLFormControlsCollection
-}
-
-/** The current value of an HTML form control element */
-declare type FormDataValue = string | File;
-
-/** The current values of an HTML form element */
-declare interface FormData {
-	[name: string]: FormDataValue | FormDataValue[];
-}
-
 /**
 * Returns data from an HTML form element
 * @param {Element} form An HTML form element
 * @returns {Object} The current values of an HTML form element
 */
-function getFormData(form: HTMLFormElement | any): FormData {
+function getFormData(form: HTMLFormElement | any): FormLikeData {
 	const each = Array.prototype.forEach;
-	const data: FormData = {};
+	const data: FormLikeData = {};
 
 	/** Sets form data from an HTML form control element and a value */
 	function set(element: HTMLInFormElementsPropertyElement, value: FormDataValue): void {

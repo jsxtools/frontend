@@ -20,7 +20,18 @@ npm install @jsxtools/is-equal
 ```js
 import isEqual from '@jsxtools/is-equal';
 
-const isShallowEqual = isEqual(prevObject, nextObject);
+// these objects are shallow equal
+objectA = { name: 'Adam', age: 930 };
+objectB = { name: 'Adam', age: 930 };
+isEqual(objectA, objectB);
 
-const isDeepEqual = isEqual(prevObject, nextObject, isEqual);
+// these objects are not shallow equal
+objectA = { name: 'Adam', age: 930, pets: ['dog'] };
+objectB = { name: 'Adam', age: 930, pets: ['dog'] };
+isEqual(objectA, objectB);
+
+// but they are deeply equal
+isEqual(objectA, objectB, isEqual);
 ```
+
+[monorepo]: https://github.com/jsxtools/monorepo

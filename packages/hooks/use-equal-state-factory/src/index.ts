@@ -1,14 +1,3 @@
-declare type DeepEqual = (value1: any, value2: any) => boolean;
-
-declare type UseStateDispatch<S> = (state: S) => void;
-declare type UseStateAction<S> = S | ((prevState: S) => S);
-declare type UseStateTuple<S> = [S, UseStateDispatch<UseStateAction<S>>];
-declare type UseState = <S> (initialState: S | (() => S)) => UseStateTuple<S>;
-
-declare type HookList = {
-	useState: UseState
-};
-
 import isEqual from '@jsxtools/is-equal';
 
 /**
@@ -22,7 +11,7 @@ function useEqualStateFactory (hooks: HookList) {
 	* @param {any} initialState The initial `state` value.
 	* @param {Function} [deepEqual] A function that returns whether two values in an object are the same value.
 	*/
-	return function useEqualState<S = any> (initialState: S, deepEqual?: DeepEqual): UseStateTuple<S> {
+	return function useEqualState<S = any> (initialState: S, deepEqual?: Equality): UseStateTuple<S> {
 		const tuple = hooks.useState(initialState);
 
 		function setEqualState<S> (nextState: S) {

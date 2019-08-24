@@ -1,11 +1,11 @@
 {
   "name": "@jsxtools/use-equal-state-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns a hook that provides a state and setter that check for shallow or deep changes.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/use-equal-state-factory#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/hooks/use-equal-state-factory#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:use-equal-state-factory",
   "main": "index.js",
   "module": "index.mjs",
@@ -13,16 +13,12 @@
   "files": [
     "index.d.ts",
     "index.js",
-    "index.ts"
+    "index.mjs"
   ],
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@jsxtools/is-equal": "^1"
-  },
-  "devDependencies": {
-    "react": "^16.9.0",
-    "react-test-renderer": "^16.9.0"
+    "@jsxtools/is-equal": "file:../../utils/is-equal"
   }
 }

@@ -1,11 +1,11 @@
 {
   "name": "@jsxtools/is-equal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns whether two values are the same value.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/is-equal#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/utils/is-equal#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:is-equal",
   "main": "index.js",
   "module": "index.mjs",
@@ -13,7 +13,7 @@
   "files": [
     "index.d.ts",
     "index.js",
-    "index.ts"
+    "index.mjs"
   ],
   "publishConfig": {
     "access": "public"

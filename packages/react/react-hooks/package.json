@@ -1,11 +1,11 @@
 {
   "name": "@jsxtools/react-hooks",
-  "version": "1.0.0",
-  "description": "DESCRIPTION",
+  "version": "1.0.1",
+  "description": "A tree-shakable collection of hooks for React",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/react-hooks#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/hooks/react-hooks#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:react-hooks",
   "main": "index.js",
   "module": "index.mjs",
@@ -19,11 +19,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@jsxtools/use-debounced-state-factory": "^1",
-    "@jsxtools/use-equal-state-factory": "^1",
-    "@jsxtools/use-fetch-factory": "^1",
-    "@jsxtools/use-local-storage-factory": "^1",
-    "@jsxtools/use-promise-factory": "^1"
+    "@jsxtools/use-debounced-state-factory": "file:../../hooks/use-debounced-state-factory",
+    "@jsxtools/use-equal-state-factory": "file:../../hooks/use-equal-state-factory",
+    "@jsxtools/use-fetch-factory": "file:../../hooks/use-fetch-factory",
+    "@jsxtools/use-local-storage-factory": "file:../../hooks/use-local-storage-factory",
+    "@jsxtools/use-promise-factory": "file:../../hooks/use-promise-factory"
   },
   "peerDependencies": {
     "react": "^16.5"

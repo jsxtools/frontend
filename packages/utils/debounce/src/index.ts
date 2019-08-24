@@ -1,3 +1,4 @@
+/** Accepts any number of arguments and returns nothing */
 declare type VoidReturningFunction<A> = (...args: A[]) => void;
 
 /**

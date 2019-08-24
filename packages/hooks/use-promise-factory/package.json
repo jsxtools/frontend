@@ -1,11 +1,11 @@
 {
   "name": "@jsxtools/use-promise-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns a hook that provides a state and settled value of a Promise.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/use-promise-factory#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/hooks/use-promise-factory#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:use-promise-factory",
   "main": "index.js",
   "module": "index.mjs",
@@ -13,13 +13,9 @@
   "files": [
     "index.d.ts",
     "index.js",
-    "index.ts"
+    "index.mjs"
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "react": "^16.9.0",
-    "react-test-renderer": "^16.9.0"
   }
 }

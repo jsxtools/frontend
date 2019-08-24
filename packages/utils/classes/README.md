@@ -24,3 +24,5 @@ classes('this', 'that', 'this'); // 'this that'
 classes(['this', 'that', 'this']); // 'this that'
 classes({ 'this': true, 'that': true, 'else': false }); // 'this that'
 ```
+
+[monorepo]: https://github.com/jsxtools/monorepo

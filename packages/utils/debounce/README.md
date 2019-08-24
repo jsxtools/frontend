@@ -5,7 +5,7 @@
 [<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/debounce.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:debounce)
 [<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/debounce.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:debounce)
 
-_debounce_ returns a debounced function that delays invoking `func` until `wait` milliseconds have elapsed since `func` was last invoked.
+**debounce** returns a function that throttles updates coming in rapid succession.
 
 It is <strong size>154 bytes</strong>.
 
@@ -24,3 +24,5 @@ window.addEventListener('resize', debounce(() => {
   // resize events
 }, 250, true));
 ```
+
+[monorepo]: https://github.com/jsxtools/monorepo

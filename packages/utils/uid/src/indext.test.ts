@@ -1,5 +1,5 @@
 import uid from '.';
-import crypto from 'crypto';
+import { randomFillSync } from 'crypto';
 
 const hasCrypto = 'crypto' in window;
 
@@ -9,7 +9,7 @@ beforeAll(() => {
 			configurable: true,
 			value: {
 				getRandomValues (array: Int8Array | Int16Array | Int32Array | Uint8Array | Uint16Array | Uint32Array | Uint8ClampedArray | Float32Array | Float64Array | DataView) {
-					return crypto.randomFillSync(array);
+					return randomFillSync(array);
 				}
 			},
 			writable: true,
@@ -19,6 +19,7 @@ beforeAll(() => {
 
 afterAll(() => {
 	if (!hasCrypto) {
+		// @ts-ignore
 		delete window.crypto;
 	}
 });

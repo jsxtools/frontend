@@ -1,14 +1,13 @@
-declare type Item = string | ItemArray | ItemObject;
 declare interface ItemArray extends Array<Item> { }
 declare interface ItemObject { [key: string]: any; }
-
 declare type classes = (...args: Item[]) => string;
+declare type Item = string | ItemArray | ItemObject;
 
 /**
 * Returns a normalized string of class names from strings, arrays, or objects.
 * @param [args] strings, arrays, or objects of class names.
 */
-const classes:classes = function classes () { // eslint-disable-line no-unused-vars
+const classes:classes = function classes () {
 	const hash = {};
 
 	Array.prototype.forEach.call(arguments, push);

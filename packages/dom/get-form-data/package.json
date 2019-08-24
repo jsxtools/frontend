@@ -1,11 +1,11 @@
 {
   "name": "@jsxtools/get-form-data",
-  "version": "1.0.0",
-  "description": "...",
+  "version": "1.0.1",
+  "description": "Returns data from an HTML form element as an object",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/get-form-data#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/dom/get-form-data#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:get-form-data",
   "main": "index.js",
   "module": "index.mjs",
@@ -13,7 +13,7 @@
   "files": [
     "index.d.ts",
     "index.js",
-    "index.ts"
+    "index.mjs"
   ],
   "publishConfig": {
     "access": "public"

@@ -45,17 +45,4 @@ function Component () {
 ```
 
 [hook]: https://reactjs.org/docs/hooks-reference.html
-
 [monorepo]: https://github.com/jsxtools/monorepo
-
-[cli-img]: https://img.shields.io/travis/jsxtools/monorepo/master.svg
-
-[cli-url]: https://travis-ci.org/jsxtools/monorepo
-
-[git-img]: https://img.shields.io/github/issues/jsxtools/monorepo/is-equal.svg
-
-[git-url]: https://github.com/jsxtools/monorepo/issues
-
-[gpr-img]: https://img.shields.io/github/issues-pr/jsxtools/monorepo/is-equal.svg
-
-[gpr-url]: https://github.com/jsxtools/monorepo/pulls

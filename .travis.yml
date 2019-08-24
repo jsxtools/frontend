@@ -9,8 +9,8 @@ node_js:
   - 'lts/*'
 
 install:
-  - npm install --ignore-scripts
-  - npx lerna bootstrap --no-ci
+  - npm install
+  - npm run build:rollup
 
 after_success:
   - npx codecov

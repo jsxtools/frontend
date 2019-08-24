@@ -40,7 +40,5 @@ function Component() {
 ```
 
 [hook]: https://reactjs.org/docs/hooks-reference.html
-
-[monorepo]: https://github.com/jsxtools/monorepo
-
 [local storage]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+[monorepo]: https://github.com/jsxtools/monorepo

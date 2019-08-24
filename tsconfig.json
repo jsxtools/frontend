@@ -1,6 +1,9 @@
 {
-  "baseUrl": "types",
-  "typeRoots": [
-    "types"
-  ],
+  "compilerOptions": {
+    "lib": ["dom", "es2020"],
+    "skipLibCheck": true
+  },
+  "includes": [
+    "typings/index.d.ts"
+  ]
 }

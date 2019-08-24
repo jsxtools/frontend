@@ -1,22 +1,22 @@
-import { createElement, Fragment, useEffect, useState } from 'react';
+import * as React from 'react';
 import usePromiseFactory from '.';
 import { act, create } from 'react-test-renderer';
 
 describe('use-equal-state-factory', () => {
-	const usePromise = usePromiseFactory({ useEffect, useState });
+	const usePromise = usePromiseFactory({ useEffect: React.useEffect, useState: React.useState });
 	const usePromiseSpy = jest.fn();
-	let wrapper = create();
+	let wrapper = create(null);
 
 	test('fulfilling component: pending state', async () => {
 		act(() => {
-			wrapper.update(createElement(function () {
+			wrapper.update(React.createElement(function () {
 				const [ state, settled ] = usePromise(async () => {
 					usePromiseSpy();
 
 					return 'success';
 				});
 
-				return createElement(Fragment, null, state, settled);
+				return React.createElement(React.Fragment, null, state, <React.ReactNode>settled);
 			}, null));
 		});
 
@@ -32,14 +32,14 @@ describe('use-equal-state-factory', () => {
 	});
 
 	test('rejecting component: pending state', async () => {
-		wrapper.update(createElement(function () {
+		wrapper.update(React.createElement(function () {
 			const [ state, settled ] = usePromise(async () => {
 				usePromiseSpy();
 
 				throw 'failure';
 			});
 
-			return createElement(Fragment, null, state, settled);
+			return React.createElement(React.Fragment, null, state, <React.ReactNode>settled);
 		}, null));
 
 		act(() => {});
@@ -56,14 +56,14 @@ describe('use-equal-state-factory', () => {
 	});
 
 	test('rejecting callback component: pending state', async () => {
-		wrapper.update(createElement(function () {
+		wrapper.update(React.createElement(function () {
 			const [ state, settled ] = usePromise(() => {
 				usePromiseSpy();
 
 				throw 'failure';
 			});
 
-			return createElement(Fragment, null, state, settled);
+			return React.createElement(React.Fragment, null, state, settled);
 		}));
 
 		act(() => {});

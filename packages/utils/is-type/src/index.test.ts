@@ -9,6 +9,7 @@ test('is-type: works on booleans, numbers, strings, arrays, and objects', () => 
 	expect(isNumber(true)).toBe(false);
 	expect(isObject({})).toBe(true);
 	expect(isObject(true)).toBe(false);
+	expect(isObject(null)).toBe(false);
 	expect(isString('true')).toBe(true);
 	expect(isString(true)).toBe(false);
 });

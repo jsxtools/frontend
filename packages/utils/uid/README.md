@@ -20,5 +20,17 @@ npm install @jsxtools/uid
 ```js
 import uid from '@jsxtools/uid';
 
-uid();
+// give <body> a unique ID with 5 characters, like "wAl_H"
+// in 1s at 4000 IDs/s it has a 1% probability of at least 1 collision
+document.body.id = uid(5);
+
+// give <body> a unique ID like "wAl_Hh9fYRe"
+// in 4d at 4000 IDs/s it has a 1% probability of at least 1 collision
+document.body.id = uid(11);
+
+// give <body> a unique ID like "wAl_Hh9fYReEakFYN-7qr"
+// in 10,000,000y at 4000 IDs/s it has a 1% probability of at least 1 collision
+document.body.id = uid(21);
 ```
+
+[monorepo]: https://github.com/jsxtools/monorepo

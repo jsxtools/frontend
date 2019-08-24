@@ -23,6 +23,14 @@ const name = names
 	.toLowerCase();
 const fnName = name.replace(/-[a-z]/g, $0 => $0[1].toUpperCase());
 
+// get current date
+const date = new Date(Date.now()).toLocaleDateString('en-US', {
+	weekday: 'narrow',
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric'
+}).slice(3);
+
 // Handle invalid arguments
 if (process.argv.length === 1) {
 	console.log(`${USAGE}\n`);
@@ -33,7 +41,7 @@ if (process.argv.length === 1) {
 const pathToCategoryDir = resolve('packages', category);
 
 if (!exists(pathToCategoryDir)) {
-	mkdir(pathToDestDir);
+	mkdir(pathToCategoryDir);
 }
 
 const pathToDestDir = resolve('packages', category, name);
@@ -52,6 +60,7 @@ const pathToDestTs = resolve(pathToDestSrcDir, 'index.ts');
 const pathToDestTestTs = resolve(pathToDestSrcDir, 'index.test.ts');
 const pathToDestPackage = resolve(pathToDestDir, 'package.json');
 const pathToDestReadme = resolve(pathToDestDir, 'README.md');
+const pathToDestChangelog = resolve(pathToDestDir, 'CHANGELOG.md');
 
 const getTs = ({ fnName }) => `function ${fnName} () {}
 
@@ -67,14 +76,14 @@ describe('${name}', () => {
 });
 `;
 
-const getPackage = ({ name }) => `{
+const getPackage = ({ category, name }) => `{
   "name": "@jsxtools/${name}",
   "version": "1.0.0",
   "description": "DESCRIPTION",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/${name}#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/${category}/${name}#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:${name}",
   "main": "index.js",
   "module": "index.mjs",
@@ -84,9 +93,9 @@ const getPackage = ({ name }) => `{
     "index.js",
     "index.mjs"
   ],
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "publishConfig": {
+    "access": "public"
+  }
 }
 `;
 const getReadme = ({ name }) => `# ${name} [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
@@ -115,9 +124,17 @@ ${fnName}();
 [monorepo]: https://github.com/jsxtools/monorepo
 `;
 
+const getChangelog = ({ date, name }) => `# Changes to ${name}
+
+### 1.0.0 (${date})
+
+- Initial version
+`;
+
 writeFile(pathToDestTs, getTs({ fnName, name }));
 writeFile(pathToDestTestTs, getTestTs({ fnName, name }));
-writeFile(pathToDestPackage, getPackage({ fnName, name }));
+writeFile(pathToDestPackage, getPackage({ category, fnName, name }));
 writeFile(pathToDestReadme, getReadme({ fnName, name }));
+writeFile(pathToDestChangelog, getChangelog({ date, name }));
 
 console.log(`"${name}" has been written to "${relative('.', pathToDestDir)}".\n`);

@@ -18,7 +18,7 @@ describe('use-local-storage', () => {
 	const useLocalStorage = useLocalStorageFactory({ useState });
 	const listenerSpy = jest.fn();
 	const rendererSpy = jest.fn();
-	const wrapper = create();
+	const wrapper = create(null);
 	let scopedState: any;
 
 	test('sets local storage', () => {
