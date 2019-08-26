@@ -1,7 +1,7 @@
-const { default: rollupPluginDts } = require('rollup-plugin-dts');
+const { createHash } = require('crypto');
 const { fs, glob, gzipSize, paths, relative, root, resolve } = require('./util');
-const { rollup } = require('rollup');
 const tsc = require('typescript');
+
 const tsconfigPath = resolve(root, 'tsconfig.json');
 const tsconfig = require(tsconfigPath);
 
@@ -11,7 +11,6 @@ const parseConfigHost = {
 	readFile: file => fs.readFileSync(file, 'utf8'),
 	useCaseSensitiveFileNames: true,
 };
-
 const parsed = tsc.parseJsonConfigFileContent(
 	{
 		...tsconfig,
@@ -19,36 +18,28 @@ const parsed = tsc.parseJsonConfigFileContent(
 		noEmitJs: true,
 	},
 	parseConfigHost,
-	root,
-	{
-		outDir: '..',
-	}
+	root
 );
+const includeCode = parsed.raw.includes.map(
+	include => fs.readFileSync(resolve(root, include), 'utf8')
+).join('\n');
 
 glob(
 	...(paths.length ? paths : ['packages/*/*/src/index.ts'])
 ).forEach(tsFile => {
+	const tsFileContents = includeCode + '\n' + fs.readFileSync(tsFile, 'utf8');
+	const hashFile = resolve('/tmp', createHash('sha1').update(tsFileContents).digest('base64').replace(/[^\w]/g, '-') + '.ts');
+	fs.writeFileSync(hashFile, tsFileContents);
+
 	const tsDir = resolve(tsFile, '..');
-	const program = tsc.createProgram([ tsFile ], parsed.options);
+	const program = tsc.createProgram([ hashFile ], parsed.options);
 
-	program.emit(undefined, async (dtsFile, tsCode) => {
-		dtsFile = resolve(tsDir, dtsFile);
-		const includeCode = parsed.raw.includes.map(
-			include => fs.readFileSync(resolve(root, include), 'utf8')
-		).join('\n');
+	program.emit(undefined, (dtsFile, code) => {
+		code = code.replace(/^declare\s/gm, 'export $&');
 
-		fs.writeFileSync(dtsFile, includeCode + tsCode);
+		dtsFile = resolve(tsDir, '../index.d.ts');
 
-		const bundle = await rollup({
-			input: dtsFile,
-			plugins: [
-				rollupPluginDts()
-			]
-		});
-
-		const generated = await bundle.generate({ format: 'cjs' });
-		const { output: [ { code } ] } = generated;
-
+		fs.unlinkSync(hashFile);
 		fs.writeFileSync(dtsFile, code);
 
 		console.log(`Created ${relative(root, dtsFile)} (${gzipSize(code)} bytes)`);

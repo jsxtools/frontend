@@ -1,5 +1,5 @@
 /** A Ref function that accepts an Node or null. */
-interface Ref {
+declare interface Ref {
 	(node: Node | null): void
 }
 

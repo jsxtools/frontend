@@ -1,5 +1,9 @@
 # Changes to is-type
 
+### 1.0.4 (August 26, 2019)
+
+- Updated TypeScript bindings
+
 ### 1.0.3
 
 - Fixed: Missing `index.mjs` file.

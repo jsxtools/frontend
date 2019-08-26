@@ -1,20 +1,20 @@
-declare interface ItemArray extends Array<Item> { }
-declare interface ItemObject { [key: string]: any; }
-declare type classes = (...args: Item[]) => string;
-declare type Item = string | ItemArray | ItemObject;
+declare interface ClassArray extends Array<ClassValue> { }
+declare interface ClassObject { [key: string]: any; }
+declare type Classes = (...args: ClassValue[]) => string;
+declare type ClassValue = string | ClassArray | ClassObject;
 
 /**
 * Returns a normalized string of class names from strings, arrays, or objects.
 * @param [args] strings, arrays, or objects of class names.
 */
-const classes:classes = function classes () {
+const classes:Classes = function classes () {
 	const hash = {};
 
 	Array.prototype.forEach.call(arguments, push);
 
 	return Object.keys(hash).join(' ');
 
-	function push(item: Item) {
+	function push(item: ClassValue) {
 		if (Array.isArray(item)) {
 			Array.prototype.forEach.call(item, push);
 		} else if (item === Object(item)) {
