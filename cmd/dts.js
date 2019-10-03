@@ -1,7 +1,6 @@
 const { createHash } = require('crypto');
-const { fs, glob, gzipSize, paths, relative, root, resolve } = require('./util');
+const { color, fs, glob, gzipSize, paths, relative, root, resolve, size } = require('./util');
 const tsc = require('typescript');
-
 const tsconfigPath = resolve(root, 'tsconfig.json');
 const tsconfig = require(tsconfigPath);
 
@@ -32,7 +31,7 @@ glob(
 	fs.writeFileSync(hashFile, tsFileContents);
 
 	const tsDir = resolve(tsFile, '..');
-	const program = tsc.createProgram([ hashFile ], parsed.options);
+	const program = tsc.createProgram([hashFile], parsed.options);
 
 	program.emit(undefined, (dtsFile, code) => {
 		code = code.replace(/^declare\s/gm, 'export $&');
@@ -42,6 +41,8 @@ glob(
 		fs.unlinkSync(hashFile);
 		fs.writeFileSync(dtsFile, code);
 
-		console.log(`Created ${relative(root, dtsFile)} (${gzipSize(code)} bytes)`);
+		console.log(
+			`${color('green')('Created')} ${relative(root, dtsFile)} ${color('dim')(`(${size(code)} bytes, ${gzipSize(code)} gzipped)`)}`
+		);
 	}, undefined, true);
 });
