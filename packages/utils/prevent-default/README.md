@@ -7,7 +7,7 @@
 
 **prevent-default** returns a function that invokes `preventDefault` on any `event` passed into it.
 
-It is <strong size>156 bytes</strong>.
+It is <strong size>221 bytes (157 gzipped)</strong>.
 
 ## Installation
 

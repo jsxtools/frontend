@@ -7,7 +7,7 @@
 
 **use-equal-state-factory** returns a [hook] that provides a state and setter that check for shallow or deep changes.
 
-It is <strong size>222 bytes</strong>.
+It is <strong size>318 bytes (222 gzipped)</strong>.
 
 ## Installation
 

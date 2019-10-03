@@ -7,7 +7,7 @@
 
 **get-form-data** returns data from an HTML form element as an object.
 
-It is <strong size>319 bytes</strong>.
+It is <strong size>567 bytes (321 gzipped)</strong>.
 
 ## Installation
 

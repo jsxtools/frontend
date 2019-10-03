@@ -7,7 +7,7 @@
 
 **is-equal** returns whether two values are the same value.
 
-It is <strong size>211 bytes</strong>.
+It is <strong size>304 bytes (212 gzipped)</strong>.
 
 ## Installation
 

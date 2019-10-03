@@ -7,7 +7,7 @@
 
 **use-local-storage-factory** returns a [hook] that provides a state and setter bound to [Local Storage].
 
-It is <strong size>228 bytes</strong>.
+It is <strong size>409 bytes (230 gzipped)</strong>.
 
 ## Installation
 

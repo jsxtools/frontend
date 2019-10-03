@@ -5,7 +5,7 @@
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/hooks/react-hooks#readme",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/react/react-hooks#readme",
   "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:react-hooks",
   "main": "index.js",
   "module": "index.mjs",
@@ -26,6 +26,6 @@
     "@jsxtools/use-promise-factory": "file:../../hooks/use-promise-factory"
   },
   "peerDependencies": {
-    "react": "^16.5"
+    "react": "^16.8"
   }
 }

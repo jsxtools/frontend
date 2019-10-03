@@ -7,7 +7,7 @@
 
 **use-debounced-state-factory** returns a [hook] that provides a state and setter that throttle updates coming in rapid succession.
 
-It is <strong size>199 bytes</strong>.
+It is <strong size>298 bytes (199 gzipped)</strong>.
 
 ## Installation
 
