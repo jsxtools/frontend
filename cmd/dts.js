@@ -24,7 +24,9 @@ const includeCode = parsed.raw.includes.map(
 ).join('\n');
 
 glob(
-	...(paths.length ? paths : ['packages/*/*/src/index.ts'])
+	...(paths.length ? paths : ['packages/*/*/src/index.ts']).map(
+		path => path.replace(/\/?(\.ts)?$/, ($0, $1) => $1 ? $0 : '/**.ts')
+	)
 ).forEach(tsFile => {
 	const tsFileContents = includeCode + '\n' + fs.readFileSync(tsFile, 'utf8');
 	const hashFile = resolve('/tmp', createHash('sha1').update(tsFileContents).digest('base64').replace(/[^\w]/g, '-') + '.ts');

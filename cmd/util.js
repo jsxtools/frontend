@@ -52,6 +52,7 @@ const args = argo => Object.keys(argo).reduce(
 
 const bin = which => path.resolve(root, 'node_modules', '.bin', which);
 const glob = (...paths) => paths.reduce((all, path) => all.concat(miniglobGlob(path)), []);
+const isDirectory = (...paths) => fs.lstatSync(resolve(...paths)).isDirectory();
 const join = (...paths) => path.join(...paths.filter(isString));
 const readFile = fs.readFileSync;
 const relative = (...paths) => path.relative(...paths.filter(isString));
@@ -63,11 +64,13 @@ const watch = (paths, options) => chokidarWatch(paths, { disableGlobbing: true, 
 exports.args = args;
 exports.bin = bin;
 exports.color = color;
+exports.isDirectory = isDirectory;
 exports.fs = fs;
 exports.glob = glob;
 exports.gzipSize = gzipSizeSync;
 exports.join = join;
 exports.opts = opts;
+exports.path = path;
 exports.paths = paths;
 exports.readFile = readFile;
 exports.relative = relative;
