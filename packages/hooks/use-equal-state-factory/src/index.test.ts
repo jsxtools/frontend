@@ -6,47 +6,47 @@ describe('use-equal-state-factory', () => {
 	const useEqualState = useEqualStateFactory({ useState });
 	const listenerSpy = jest.fn();
 	const rendererSpy = jest.fn();
-	const same = { a: 1, b: 2, c: 3 };
+	const originalState = { a: 1, b: 2, c: 3 };
 	const wrapper = create(null);
 	let scopedState: any;
 
 	test('runs without updates', () => {
 		act(() => {
 			wrapper.update(createElement(function Component() {
-				const [state, setState] = useEqualState(same);
+				const [state, setState] = useEqualState(originalState);
 
 				scopedState = state;
 
 				rendererSpy();
 
-				return createElement('button', { onClick (nextState) { setState(nextState); listenerSpy(); } });
+				return createElement('button', { onClick(nextState) { setState(nextState); listenerSpy(); } });
 			}, null));
 		});
 
 		expect(listenerSpy).toHaveBeenCalledTimes(0);
 		expect(rendererSpy).toHaveBeenCalledTimes(1);
 		expect(scopedState).toBeDefined();
-		expect(scopedState).toMatchObject(same);
+		expect(scopedState).toMatchObject(originalState);
 	});
 
-	test('runs without updates using same object', () => {
+	test('runs without updates when setting with the same object', () => {
 		act(() => {
-			wrapper.root.findByType('button').props.onClick(same);
+			wrapper.root.findByType('button').props.onClick(originalState);
 		});
 
 		expect(listenerSpy).toHaveBeenCalledTimes(1);
 		expect(rendererSpy).toHaveBeenCalledTimes(1);
-		expect(scopedState).toMatchObject(same);
+		expect(scopedState).toMatchObject(originalState);
 	});
 
-	test('runs without updates using matching object', () => {
+	test('runs without updates when setting with a matching object', () => {
 		act(() => {
 			wrapper.root.findByType('button').props.onClick({ a: 1, b: 2, c: 3 });
 		});
 
 		expect(listenerSpy).toHaveBeenCalledTimes(2);
 		expect(rendererSpy).toHaveBeenCalledTimes(1);
-		expect(scopedState).toMatchObject(same);
+		expect(scopedState).toMatchObject(originalState);
 	});
 
 	test('runs with updates using non-matching object', () => {

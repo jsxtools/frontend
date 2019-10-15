@@ -32,7 +32,7 @@ const date = new Date(Date.now()).toLocaleDateString('en-US', {
 }).slice(3);
 
 // Handle invalid arguments
-if (process.argv.length === 1) {
+if (process.argv.length < 4) {
 	console.log(`${USAGE}\n`);
 
 	process.exit(0);
