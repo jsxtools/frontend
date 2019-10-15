@@ -1,0 +1,25 @@
+{
+  "name": "@jsxtools/create-context-state",
+  "version": "1.0.0",
+  "description": "Create context states sharable across components in React",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jsxtools/monorepo",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/react/create-context-state#readme",
+  "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:create-context-state",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.mjs"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
