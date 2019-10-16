@@ -1,9 +1,9 @@
-# is-type [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
+# is-type [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/is-type.svg" height="20">](https://www.npmjs.com/package/@jsxtools/is-type)
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/monorepo/master.svg" height="20">](https://travis-ci.org/jsxtools/monorepo/is-type)
-[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/is-type.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:is-type)
-[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/is-type.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:is-type)
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/is-type)
+[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/is-type.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:is-type)
+[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/is-type.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:is-type)
 
 **is-type** is a collection of functions that return whether a value is a certain type.
 
@@ -42,4 +42,4 @@ isString([]); // false
 isString({}); // false
 ```
 
-[monorepo]: https://github.com/jsxtools/monorepo
+[frontend]: https://github.com/jsxtools/frontend

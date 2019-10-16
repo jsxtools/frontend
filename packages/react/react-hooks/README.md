@@ -1,9 +1,9 @@
-# react-hooks [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
+# react-hooks [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/react-hooks.svg" height="20">](https://www.npmjs.com/package/@jsxtools/react-hooks)
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/monorepo/master.svg" height="20">](https://travis-ci.org/jsxtools/monorepo/react-hooks)
-[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/react-hooks.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:react-hooks)
-[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/react-hooks.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:react-hooks)
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/react-hooks)
+[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/react-hooks.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:react-hooks)
+[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/react-hooks.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:react-hooks)
 
 **react-hooks** is a tree-shakable collection of [hooks] for React.
 
@@ -119,4 +119,4 @@ reactHooks();
 ```
 
 [hooks]: https://reactjs.org/docs/hooks-reference.html
-[monorepo]: https://github.com/jsxtools/monorepo
+[frontend]: https://github.com/jsxtools/frontend

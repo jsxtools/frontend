@@ -1,9 +1,9 @@
-# ref-on [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
+# ref-on [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/ref-on.svg" height="20">](https://www.npmjs.com/package/@jsxtools/ref-on)
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/monorepo/master.svg" height="20">](https://travis-ci.org/jsxtools/monorepo/ref-on)
-[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/ref-on.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:ref-on)
-[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/ref-on.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:ref-on)
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/ref-on)
+[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/ref-on.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:ref-on)
+[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/ref-on.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:ref-on)
 
 **ref-on** lets you handle DOM events like React [synthetic events].
 
@@ -37,5 +37,5 @@ function FormField() {
 }
 ```
 
-[monorepo]: https://github.com/jsxtools/monorepo
+[frontend]: https://github.com/jsxtools/frontend
 [synthetic events]: https://reactjs.org/docs/handling-events.html

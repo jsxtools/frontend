@@ -82,9 +82,9 @@ const getPackage = ({ category, name }) => `{
   "description": "DESCRIPTION",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
-  "repository": "jsxtools/monorepo",
-  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/${category}/${name}#readme",
-  "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:${name}",
+  "repository": "jsxtools/frontend",
+  "homepage": "https://github.com/jsxtools/frontend/tree/master/packages/${category}/${name}#readme",
+  "bugs": "https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:${name}",
   "main": "index.js",
   "module": "index.mjs",
   "typings": "index.d.ts",
@@ -98,12 +98,12 @@ const getPackage = ({ category, name }) => `{
   }
 }
 `;
-const getReadme = ({ name }) => `# ${name} [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
+const getReadme = ({ name }) => `# ${name} [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/${name}.svg" height="20">](https://www.npmjs.com/package/@jsxtools/${name})
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/monorepo/master.svg" height="20">](https://travis-ci.org/jsxtools/monorepo/${name})
-[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/${name}.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:${name})
-[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/${name}.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:${name})
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/${name})
+[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/${name}.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:${name})
+[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/${name}.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:${name})
 
 **${name}** DESCRIPTION
 
@@ -121,7 +121,7 @@ import ${fnName} from '@jsxtools/${name}';
 ${fnName}();
 \`\`\`
 
-[monorepo]: https://github.com/jsxtools/monorepo
+[frontend]: https://github.com/jsxtools/frontend
 `;
 
 const getChangelog = ({ date, name }) => `# Changes to ${name}

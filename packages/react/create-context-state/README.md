@@ -1,9 +1,9 @@
-# create-context-state [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
+# create-context-state [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/create-context-state.svg" height="20">](https://www.npmjs.com/package/@jsxtools/create-context-state)
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/monorepo/master.svg" height="20">](https://travis-ci.org/jsxtools/monorepo/create-context-state)
-[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/create-context-state.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:create-context-state)
-[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/create-context-state.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:create-context-state)
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/create-context-state)
+[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/create-context-state.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:create-context-state)
+[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/create-context-state.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:create-context-state)
 
 **create-context-state** lets you create context states sharable across components in React.
 
@@ -74,4 +74,4 @@ export default function MyComponent() {
 }
 ```
 
-[monorepo]: https://github.com/jsxtools/monorepo
+[frontend]: https://github.com/jsxtools/frontend

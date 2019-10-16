@@ -1,7 +1,7 @@
 {
-  "name": "monorepo",
+  "name": "frontend",
   "version": "0.0.0",
-  "description": "A monorepo of tools",
+  "description": "A collection of frontend packages",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "scripts": {

@@ -1,9 +1,9 @@
-# get-form-data [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][monorepo]
+# get-form-data [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/get-form-data.svg" height="20">](https://www.npmjs.com/package/@jsxtools/get-form-data)
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/monorepo/master.svg" height="20">](https://travis-ci.org/jsxtools/monorepo/get-form-data)
-[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/monorepo/get-form-data.svg" height="20">](https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:get-form-data)
-[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/monorepo/get-form-data.svg" height="20">](https://github.com/jsxtools/monorepo/pulls?q=is:pr+is:open+label:get-form-data)
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/get-form-data)
+[<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/get-form-data.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:get-form-data)
+[<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/get-form-data.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:get-form-data)
 
 **get-form-data** returns data from an HTML form element as an object.
 
@@ -67,4 +67,4 @@ const data = getFormData(document.getElementById('form'));
 } */
 ```
 
-[monorepo]: https://github.com/jsxtools/monorepo
+[frontend]: https://github.com/jsxtools/frontend
