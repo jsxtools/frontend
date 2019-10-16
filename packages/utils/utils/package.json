@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/utils",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A tree-shakable collection of utilities for JavaScript",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -21,6 +21,7 @@
   "dependencies": {
     "@jsxtools/classes": "file:../classes",
     "@jsxtools/debounce": "file:../debounce",
+    "@jsxtools/define-args": "file:../define-args",
     "@jsxtools/is-equal": "file:../is-equal",
     "@jsxtools/is-type": "file:../is-type",
     "@jsxtools/prevent-default": "file:../prevent-default",

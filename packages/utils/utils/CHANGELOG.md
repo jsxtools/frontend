@@ -1,5 +1,9 @@
 # Changes to utils
 
+### 1.1.0 (October 16, 2019)
+
+- Added defineArgs
+
 ### 1.0.2 (August 26, 2019)
 
 - Updated TypeScript bindings

@@ -7,7 +7,7 @@
 
 **utils** is a tree-shakable collection of utilities for JavaScript.
 
-It is <strong size>729 bytes (322 gzipped)</strong>.
+It is <strong size>820 bytes (342 gzipped)</strong>.
 
 ## Installation
 

@@ -65,6 +65,7 @@
   "dependencies": {
     "@jsxtools/classes": "file:packages/utils/classes",
     "@jsxtools/debounce": "file:packages/utils/debounce",
+    "@jsxtools/define-args": "file:packages/utils/define-args",
     "@jsxtools/get-form-data": "file:packages/dom/get-form-data",
     "@jsxtools/is-equal": "file:packages/utils/is-equal",
     "@jsxtools/is-type": "file:packages/utils/is-type",
