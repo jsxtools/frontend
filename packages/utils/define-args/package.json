@@ -1,0 +1,21 @@
+{
+  "name": "@jsxtools/define-args",
+  "version": "1.0.0",
+  "description": "Return a function with the ability to bind arguments without binding context",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jsxtools/monorepo",
+  "homepage": "https://github.com/jsxtools/monorepo/tree/master/packages/utils/define-args#readme",
+  "bugs": "https://github.com/jsxtools/monorepo/issues?q=is:issue+is:open+label:define-args",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.mjs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
