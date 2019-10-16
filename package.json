@@ -12,7 +12,7 @@
     "create": "node cmd/create",
     "publish": "run-s bootstrap build",
     "postpublish": "lerna publish from-package",
-    "prepare": "run-s bootstrap",
+    "prepare": "run-s build bootstrap",
     "test": "run-s test:*",
     "test:eslint": "node cmd/eslint",
     "test:jest": "node cmd/jest",
