@@ -7,7 +7,7 @@
 
 **react-hooks** is a tree-shakable collection of [hooks] for React.
 
-It is <strong size>983 bytes (340 gzipped)</strong>.
+It is <strong size>446 bytes (226 gzipped)</strong>.
 
 ## useDebouncedState
 

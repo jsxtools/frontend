@@ -7,7 +7,7 @@
 
 **define-args** returns a function with the ability to bind arguments without binding context.
 
-It is <strong size>542 bytes (325 gzipped)</strong>.
+It is <strong size>520 bytes (314 gzipped)</strong>.
 
 ## Installation
 

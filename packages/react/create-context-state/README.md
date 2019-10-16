@@ -7,7 +7,7 @@
 
 **create-context-state** lets you create context states sharable across components in React.
 
-It is <strong size>288 bytes (192 gzipped)</strong>.
+It is <strong size>231 bytes (184 gzipped)</strong>.
 
 ## Installation
 

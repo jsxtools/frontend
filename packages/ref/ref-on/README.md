@@ -7,7 +7,7 @@
 
 **ref-on** lets you handle DOM events like React [synthetic events].
 
-It is <strong size>978 bytes (466 gzipped)</strong>.
+It is <strong size>854 bytes (449 gzipped)</strong>.
 
 ## Installation
 

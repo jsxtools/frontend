@@ -7,7 +7,7 @@
 
 **use-promise-factory** generates a [hook] that provides a state and settled value of a [Promise].
 
-It is <strong size>487 bytes (284 gzipped)</strong>.
+It is <strong size>451 bytes (268 gzipped)</strong>.
 
 ## Installation
 

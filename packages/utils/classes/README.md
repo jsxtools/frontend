@@ -7,7 +7,7 @@
 
 **classes** returns a normalized string of class names from strings, arrays, or objects.
 
-It is <strong size>323 bytes (223 gzipped)</strong>.
+It is <strong size>302 bytes (212 gzipped)</strong>.
 
 ## Installation
 

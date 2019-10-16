@@ -50,7 +50,7 @@ function writeCodeGolfToReadme() {
 	return {
 		name: 'write-code-golf-to-readme',
 		writeBundle(bundle) {
-			const indexJs = bundle['index.js'];
+			const indexJs = bundle['index.mjs'];
 
 			if (indexJs) {
 				const readmeMd = fs.readFileSync('README.md', 'utf8');

@@ -7,7 +7,7 @@
 
 **uid** returns a unique URL-safe ID.
 
-It is <strong size>195 bytes (205 gzipped)</strong>.
+It is <strong size>187 bytes (197 gzipped)</strong>.
 
 ## Installation
 

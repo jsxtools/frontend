@@ -7,7 +7,7 @@
 
 **debounce** returns a function that throttles updates coming in rapid succession.
 
-It is <strong size>194 bytes (156 gzipped)</strong>.
+It is <strong size>176 bytes (142 gzipped)</strong>.
 
 ## Installation
 

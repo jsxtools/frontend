@@ -7,7 +7,7 @@
 
 **is-type** is a collection of functions that return whether a value is a certain type.
 
-It is <strong size>422 bytes (222 gzipped)</strong>.
+It is <strong size>280 bytes (173 gzipped)</strong>.
 
 ## Installation
 
