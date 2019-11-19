@@ -15,11 +15,11 @@
     "index.js",
     "index.mjs"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.8"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

@@ -19,6 +19,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@jsxtools/create-context-state": "file:../create-context-state",
     "@jsxtools/use-debounced-state-factory": "file:../../hooks/use-debounced-state-factory",
     "@jsxtools/use-equal-state-factory": "file:../../hooks/use-equal-state-factory",
     "@jsxtools/use-fetch-factory": "file:../../hooks/use-fetch-factory",

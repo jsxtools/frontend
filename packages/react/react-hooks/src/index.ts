@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import createContextState from '@jsxtools/create-context-state';
 import useDebouncedStateFactory from '@jsxtools/use-debounced-state-factory';
 import useEqualStateFactory from '@jsxtools/use-equal-state-factory';
 import useFetchFactory from '@jsxtools/use-fetch-factory';
@@ -14,6 +15,7 @@ const useLocalStorage = useLocalStorageFactory(hooks);
 const usePromise = usePromiseFactory(hooks);
 
 export {
+	createContextState,
 	useDebounce,
 	useEqual,
 	useFetch,
