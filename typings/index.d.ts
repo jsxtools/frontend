@@ -12,7 +12,8 @@ type Dispatch<S> = (state: S) => void;
 /** An abstract object representing some of the hooks which allow reuse functionality between components */
 interface HookList extends Object {
 	useEffect?: UseEffect,
-	useState?: UseState<any>;
+	useRef?: React.useRef,
+	useState?: UseState<any>,
 }
 
 /** A fulfill-resolving function */
@@ -54,5 +55,5 @@ declare type FormDataValue = string | File;
 
 /** The current values of an HTML form element */
 declare interface FormLikeData {
-	[name: string]: FormDataValue | FormDataValue[];
+	[name: string]: FormDataValue | FormDataValue[]
 }

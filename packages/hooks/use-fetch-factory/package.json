@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/use-fetch-factory",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "generates a hook that provides the state and settled response of a fetch request",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -15,10 +15,10 @@
     "index.js",
     "index.mjs"
   ],
+  "dependencies": {
+    "@jsxtools/is-equal": "file:../../utils/is-equal"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@jsxtools/use-promise-factory": "file:../use-promise-factory"
   }
 }

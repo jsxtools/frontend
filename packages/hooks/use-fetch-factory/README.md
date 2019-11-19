@@ -7,7 +7,7 @@
 
 **use-fetch-factory** generates a [hook] that provides the state and settled response of a [fetch].
 
-It is <strong size>464 bytes (286 gzipped)</strong>.
+It is <strong size>597 bytes (353 gzipped)</strong>.
 
 ## Installation
 
@@ -18,10 +18,10 @@ npm install @jsxtools/use-fetch-factory
 ## Usage
 
 ```js
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useFetchFactory from '@jsxtools/use-fetch-factory';
 
-const useFetch = useFetchFactory({ useEffect, useState });
+const useFetch = useFetchFactory({ useEffect, useRef, useState });
 
 function Component () {
   // the `state` is "pending", "fulfilled", or "rejected"
@@ -32,6 +32,24 @@ function Component () {
     ? 'Loading'
   : JSON.stringify(settledValue);
 }
+```
+
+### Abort
+
+```js
+const [ state, response, abort ] = useFetch('https://httpbin.org/get');
+
+// abort the fetch
+abort();
+```
+
+### Timeout
+
+```js
+// abort the fetch after 2000ms
+const [ state, response ] = useFetch('https://httpbin.org/get', {
+  timeout: 2000
+});
 ```
 
 [fetch]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch

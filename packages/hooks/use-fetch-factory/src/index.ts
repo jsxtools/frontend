@@ -1,35 +1,53 @@
+import isEqual from '@jsxtools/is-equal';
+
 declare type UseFetchTuple = [
-	'pending' | 'fulfilled' | 'rejected',
+	/** State of the fetch; "pending", "fulfilled", or "rejected" */
+	PromiseState,
+	/** Outcome of the fetch, either by successfully being fulfilled or by being rejected */
 	undefined | Response | Error,
-	Reject
+	/** Aborts the fetch before it has completed */
+	AbortController['abort'],
 ];
 
+declare interface RequestInitLike extends RequestInit {
+	/** Defines the number of milliseconds a fetch can take before automatically being aborted. */
+	timeout?: number,
+	/** Response resolved with the result of parsing the body text as response type. */
+	type?: 'json' | 'text',
+}
+
 function useFetchFactory(hooks: HookList) {
-	function useFetch(input: RequestInfo, options?: RequestInit, deps?: DependencyList): UseFetchTuple {
+	function useFetch(input: RequestInfo, init?: RequestInitLike, deps?: DependencyList): UseFetchTuple {
 		// create a tuple of [ state, settledValue, abort ]
 		const tuple = hooks.useState((): UseFetchTuple => {
-			const controller = new AbortController();
-			const init = Object.assign({}, options, { signal: controller.signal });
-			const abort: Reject = (): void => {
-				controller.abort();
-				reject(new Error('Aborted'));
-			};
-			let fulfill: Fulfill<Response>;
-			let reject: Reject;
+			init = Object(init);
 
-			new Promise((_fulfill: Fulfill<Response>, _reject: Reject) => {
-				fulfill = _fulfill;
-				reject = _reject;
+			const controller: AbortController = new AbortController();
+			const abort: AbortController['abort'] = controller.abort.bind(controller);
+			const timeout: number | NodeJS.Timeout = init.timeout ? setTimeout(abort, init.timeout) : null;
 
-				fetch(input, init).then(response => {
-					fulfill(response);
-				}, reject);
-			}).then(response => {
-				tuple[1]([
-					'fulfilled',
-					response,
-					abort
-				]);
+			init.signal = controller.signal;
+
+			fetch(input, init).then(response => {
+				const type = response[init.type];
+
+				clearTimeout(timeout);
+
+				if (typeof type === 'function') {
+					Promise.resolve(type()).then(typeValue => {
+						tuple[1]([
+							'fulfilled',
+							typeValue,
+							abort
+						]);
+					});
+				} else {
+					tuple[1]([
+						'fulfilled',
+						response,
+						abort
+					]);
+				}
 			}, reason => {
 				tuple[1]([
 					'rejected',
@@ -41,9 +59,17 @@ function useFetchFactory(hooks: HookList) {
 			return ['pending', undefined, abort];
 		});
 
+		const ref = hooks.useRef();
+
+		// abort the fetch when the component is removed
 		hooks.useEffect(
-			() => tuple[0][2],
-			[input, options].concat(deps || [])
+			Object.bind(Object, tuple[0][2]),
+			[
+				input,
+				isEqual(init, ref.current, isEqual)
+					? ref.current
+				: (ref.current = init)
+			].concat(deps || [])
 		);
 
 		return tuple[0];
