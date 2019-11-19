@@ -29,12 +29,10 @@ function useFetchFactory(hooks: HookList) {
 			init.signal = controller.signal;
 
 			fetch(input, init).then(response => {
-				const type = response[init.type];
-
 				clearTimeout(timeout);
 
-				if (typeof type === 'function') {
-					Promise.resolve(type()).then(typeValue => {
+				if (typeof response[init.type] === 'function') {
+					Promise.resolve(response[init.type]()).then(typeValue => {
 						tuple[1]([
 							'fulfilled',
 							typeValue,

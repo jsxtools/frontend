@@ -1,5 +1,9 @@
 # Changes to react-hooks
 
+### 1.1.2 (November 19, 2019)
+
+- Fixed an issue with improperly called response types
+
 ### 1.1.1 (November 19, 2019)
 
 - Fixed issues with missing required `useRef` hook
