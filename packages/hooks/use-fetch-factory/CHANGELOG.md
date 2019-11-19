@@ -1,5 +1,9 @@
 # Changes to use-fetch-factory
 
+### 1.1.1 (November 19, 2019)
+
+- Fixed an issue with improperly called response types
+
 ### 1.1.0 (November 19, 2019)
 
 - Added timeout functionality

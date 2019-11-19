@@ -7,7 +7,7 @@
 
 **use-fetch-factory** generates a [hook] that provides the state and settled response of a [fetch].
 
-It is <strong size>597 bytes (353 gzipped)</strong>.
+It is <strong size>597 bytes (351 gzipped)</strong>.
 
 ## Installation
 
