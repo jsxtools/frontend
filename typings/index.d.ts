@@ -3,6 +3,13 @@ type UseEffect = (effect: EffectCallback, deps?: DependencyList) => (void | (() 
 type EffectCallback = () => (void | (() => void));
 type DependencyList = ReadonlyArray<any>;
 
+/** Returns a mutable object whose "current" property is initialized to the passed argument */
+type UseRef = <T>(initialValue: T) => MutableRefObject<T>;
+
+interface MutableRefObject<T> {
+	current: T;
+}
+
 /** Returns a stateful value, and a function to update it */
 type UseState<S> = (initialState: S | (() => S)) => UseStateTuple<S>;
 type UseStateTuple<S> = [S, Dispatch<SetStateAction<S>>];
@@ -12,7 +19,7 @@ type Dispatch<S> = (state: S) => void;
 /** An abstract object representing some of the hooks which allow reuse functionality between components */
 interface HookList extends Object {
 	useEffect?: UseEffect,
-	useRef?: React.useRef,
+	useRef?: UseRef<any>,
 	useState?: UseState<any>,
 }
 

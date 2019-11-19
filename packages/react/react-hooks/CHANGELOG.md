@@ -1,5 +1,9 @@
 # Changes to react-hooks
 
+### 1.1.1 (November 19, 2019)
+
+- Fixed issues with missing required `useRef` hook
+
 ### 1.1.0 (November 19, 2019)
 
 - Added `@jsxtools/create-context-state`
