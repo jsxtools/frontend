@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/use-debounced-state-factory",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Returns a hook that provides a state and setter that throttle updates coming in rapid succession.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

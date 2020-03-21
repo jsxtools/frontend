@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/resize-observer",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Minimal polyfill for the ResizeObserver API",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "contributors": [

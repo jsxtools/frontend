@@ -14,6 +14,7 @@
     "build": "run-p build:*",
     "build:dts": "node cmd/dts",
     "build:rollup": "node cmd/rollup",
+    "ci": "run-s build 'test --ci'",
     "create": "node cmd/create",
     "release": "run-s bootstrap build release:*",
     "release:lerna": "lerna publish from-package",

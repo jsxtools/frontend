@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/define-args",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Return a function with the ability to bind arguments without binding context",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

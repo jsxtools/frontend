@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/use-equal-state-factory",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Returns a hook that provides a state and setter that check for shallow or deep changes.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

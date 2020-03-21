@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/create-context-state",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Create context states sharable across components in React",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

@@ -1,7 +1,7 @@
 # use-debounced-state-factory [<img src="https://avatars.githubusercontent.com/u/52989093" alt="" width="90" height="90" align="right">][frontend]
 
 [<img alt="npm version" src="https://img.shields.io/npm/v/@jsxtools/use-debounced-state-factory.svg" height="20">](https://www.npmjs.com/package/@jsxtools/use-debounced-state-factory)
-[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/jsxtools/frontend/use-debounced-state-factory)
+[<img alt="build status" src="https://img.shields.io/travis/jsxtools/frontend/master.svg" height="20">](https://travis-ci.org/github/jsxtools/frontend)
 [<img alt="issue tracker" src="https://img.shields.io/github/issues/jsxtools/frontend/use-debounced-state-factory.svg" height="20">](https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:use-debounced-state-factory)
 [<img alt="pull requests" src="https://img.shields.io/github/issues-pr/jsxtools/frontend/use-debounced-state-factory.svg" height="20">](https://github.com/jsxtools/frontend/pulls?q=is:pr+is:open+label:use-debounced-state-factory)
 

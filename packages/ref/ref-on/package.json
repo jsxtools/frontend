@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/ref-on",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Handle DOM events like React synthetic events.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
