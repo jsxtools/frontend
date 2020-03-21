@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 
 /** Interface reporting changes to the content or border box dimensions of an Element, or the bounding box of an SVGElement. */
-declare class ResizeObserver {
+export declare class ResizeObserver {
 	constructor(callback: Function);
 	observe(target: HTMLElement | SVGElement): void;
 	unobserve(target: HTMLElement | SVGElement): void;
 }
 
 /** Object passed to the ResizeObserver() constructor's callback function. */
-declare class ResizeObserverEntry {
+export declare class ResizeObserverEntry {
 	target: HTMLElement | SVGElement;
 	contentRect: DOMRectReadOnly;
 }
@@ -16,7 +16,7 @@ declare class ResizeObserverEntry {
 /* eslint-enable no-unused-vars */
 
 /** Function called whenever an observed resize occurs. */
-declare type ResizeObserverCallback = (
+export declare type ResizeObserverCallback = (
 	entries: ResizeObserverEntry[],
 	observer: ResizeObserver,
 ) => void

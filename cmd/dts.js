@@ -1,50 +1,84 @@
-const { createHash } = require('crypto');
-const { color, fs, glob, gzipSize, paths, relative, root, resolve, size } = require('./util');
 const tsc = require('typescript');
-const tsconfigPath = resolve(root, 'tsconfig.json');
-const tsconfig = require(tsconfigPath);
+const {
+	color,
+	glob,
+	gzipSize,
+	paths,
+	relative,
+	resolve,
+	root,
+	size
+} = require('./util');
 
-const parseConfigHost = {
-	fileExists: fs.existsSync,
-	readDirectory: tsc.sys.readDirectory,
-	readFile: file => fs.readFileSync(file, 'utf8'),
-	useCaseSensitiveFileNames: true,
-};
-const parsed = tsc.parseJsonConfigFileContent(
+const tsconfig = require(resolve(root, 'tsconfig.json'));
+const dtsCodeHash = Object.create(null);
+const prefixCode = Array.from(tsconfig.includes)
+	.map(include => tsc.sys.readFile(resolve(root, include), 'utf8'))
+	.join('\n');
+
+const host = Object.assign(
+	tsc.createCompilerHost({
+		allowJs: true,
+		declaration: true,
+		emitDeclarationOnly: true
+	}),
 	{
-		...tsconfig,
-		declarations: true,
-		noEmitJs: true,
-	},
-	parseConfigHost,
-	root
+		getSourceFile(fileName, languageVersion) {
+			const sourceCode =
+				(fileName in fileNameHash ? prefixCode : '') +
+				tsc.sys.readFile(fileName);
+
+			return sourceCode === undefined
+				? undefined
+				: tsc.createSourceFile(fileName, sourceCode, languageVersion);
+		},
+		writeFile(fileName, contents) {
+			return (dtsCodeHash[dtsNameHash[fileName] || fileName] = contents.replace(
+				/^declare\s/gm,
+				'export $&'
+			));
+		}
+	}
 );
-const includeCode = parsed.raw.includes.map(
-	include => fs.readFileSync(resolve(root, include), 'utf8')
-).join('\n');
 
-glob(
-	...(paths.length ? paths : ['packages/*/*/src/index.ts']).map(
-		path => path.replace(/\/?(\.ts)?$/, ($0, $1) => $1 ? $0 : '/**.ts')
+const fileNames = glob(
+	...(paths.length ? paths : ['packages/*/*/src/index.ts']).map(path =>
+		path.replace(/\/?(\.ts)?$/, ($0, $1) => ($1 ? $0 : '/**/index.ts'))
 	)
-).forEach(tsFile => {
-	const tsFileContents = includeCode + '\n' + fs.readFileSync(tsFile, 'utf8');
-	const hashFile = resolve('/tmp', createHash('sha1').update(tsFileContents).digest('base64').replace(/[^\w]/g, '-') + '.ts');
-	fs.writeFileSync(hashFile, tsFileContents);
+);
 
-	const tsDir = resolve(tsFile, '..');
-	const program = tsc.createProgram([hashFile], parsed.options);
+const fileNameHash = fileNames.reduce(
+	(hash, name) => Object.assign(hash, { [name]: true }),
+	{}
+);
 
-	program.emit(undefined, (dtsFile, code) => {
-		code = code.replace(/^declare\s/gm, 'export $&');
+const dtsNameHash = fileNames.reduce(
+	(hash, name) =>
+		Object.assign(hash, { [name.replace(/[^.]+$/, 'd.ts')]: name }),
+	{}
+);
 
-		dtsFile = resolve(tsDir, '../index.d.ts');
+const program = tsc.createProgram(
+	fileNames,
+	{
+		allowJs: true,
+		declaration: true,
+		emitDeclarationOnly: true
+	},
+	host
+);
 
-		fs.unlinkSync(hashFile);
-		fs.writeFileSync(dtsFile, code);
+program.emit();
 
-		console.log(
-			`${color('green')('Created')} ${relative(root, dtsFile)} ${color('dim')(`(${size(code)} bytes, ${gzipSize(code)} gzipped)`)}`
-		);
-	}, undefined, true);
+fileNames.forEach(fileName => {
+	const dtsFileName = resolve(fileName, '../..', 'index.d.ts');
+	const dtsContents = dtsCodeHash[fileName];
+
+	tsc.sys.writeFile(dtsFileName, dtsContents);
+
+	console.log(
+		`${color('green')('Created')} ${relative(root, dtsFileName)} ${color('dim')(
+			`(${size(dtsContents)} bytes, ${gzipSize(dtsContents)} gzipped)`
+		)}`
+	);
 });

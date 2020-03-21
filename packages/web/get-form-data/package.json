@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/get-form-data",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns data from an HTML form element as an object",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

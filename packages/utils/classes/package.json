@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/classes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Returns a normalized string of class names from strings, arrays, or objects.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
