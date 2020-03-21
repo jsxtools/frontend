@@ -21,7 +21,7 @@ npm install @jsxtools/resize-observer
 import polyfillResizeObserver from '@jsxtools/resize-observer'
 
 // polyfill ResizeObserver
-polyfillResizeObserver(window)
+window.ResizeObserver || polyfillResizeObserver(window)
 ```
 
 ```js
