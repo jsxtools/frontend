@@ -1,0 +1,24 @@
+{
+  "name": "@jsxtools/resize-observer",
+  "version": "1.0.0",
+  "description": "Minimal polyfill for the ResizeObserver API",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "contributors": [
+    "Tremayne Christ"
+  ],
+  "license": "CC0-1.0",
+  "repository": "jsxtools/frontend",
+  "homepage": "https://github.com/jsxtools/frontend/tree/master/packages/web/resize-observer#readme",
+  "bugs": "https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:resize-observer",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.mjs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
