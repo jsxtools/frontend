@@ -5,7 +5,7 @@
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jsxtools/frontend",
-  "homepage": "https://github.com/jsxtools/frontend/tree/master/packages/dom/get-form-data#readme",
+  "homepage": "https://github.com/jsxtools/frontend/tree/master/packages/web/get-form-data#readme",
   "bugs": "https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:get-form-data",
   "main": "index.js",
   "module": "index.mjs",

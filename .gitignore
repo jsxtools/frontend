@@ -9,4 +9,4 @@ package-lock.json
 !.stylelintrc
 !.travis.yml
 /coverage
-/packages/*/*/*[.js,.map,.mjs]
+/packages/*/*/*[.js,.map,.mjs,__snapshots__]

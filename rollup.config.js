@@ -28,7 +28,7 @@ module.exports = {
 function reportCodeGolf() {
 	return {
 		name: 'code-golf',
-		writeBundle(bundle) {
+		writeBundle(opts, bundle) {
 			Object.keys(bundle).forEach(filename => {
 				const file = bundle[filename];
 				const filepath = resolve(process.cwd(), filename);
