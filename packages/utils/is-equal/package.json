@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/is-equal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns whether two values are the same value.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

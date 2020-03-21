@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/is-type",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of functions that return whether a value is a certain type.",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

@@ -19,10 +19,16 @@ npm install
 npm run build
 ```
 
+## Watch
+
+```
+npm run watch
+```
+
 ## Publish
 
 ```
-npm run publish
+npm run release
 ```
 
 [frontend]: https://github.com/jsxtools/frontend

@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/uid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns a unique URL-safe ID",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

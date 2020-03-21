@@ -1,6 +1,6 @@
 {
   "name": "@jsxtools/use-fetch-factory",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "generates a hook that provides the state and settled response of a fetch request",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",

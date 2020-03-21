@@ -4,10 +4,10 @@ const exitCode = spawn(
 	bin('jest'),
 	[
 		...opts.toArray({
-			'--ci': [],
 			'--colors': [],
 			'--coverage': [],
 			'--passWithNoTests': [],
+			...(opts.hasOwnProperty('--ci') ? {} : { '--ci': [], '-u': [] }),
 			...(opts.hasOwnProperty('--watchAll') ? {} : { '--onlyChanged': [] }),
 		}),
 		...glob(

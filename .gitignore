@@ -10,3 +10,4 @@ package-lock.json
 !.travis.yml
 /coverage
 /packages/*/*/*[.js,.map,.mjs]
+/packages/*/*/src/__snapshots__
