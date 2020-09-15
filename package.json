@@ -90,7 +90,7 @@
     "lerna": "3.20.2",
     "lint-staged": "10.0.8",
     "miniglob": "0.1.1",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "npm-run-all": "4.1.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
