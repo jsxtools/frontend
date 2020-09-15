@@ -1,0 +1,24 @@
+{
+  "name": "@jsxtools/use-resize-observer",
+  "version": "1.0.0",
+  "description": "Observe the size of an element in React",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jsxtools/frontend",
+  "homepage": "https://github.com/jsxtools/frontend/tree/master/packages/react/use-resize-observer#readme",
+  "bugs": "https://github.com/jsxtools/frontend/issues?q=is:issue+is:open+label:use-resize-observer",
+  "main": "index.js",
+  "module": "index.mjs",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.mjs"
+  ],
+  "peerDependencies": {
+    "react": "^16.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
