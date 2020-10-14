@@ -21,8 +21,8 @@ export declare type ResizeObserverCallback = (
 	observer: ResizeObserver,
 ) => void
 
-/** Method to polyfill the specified Window. */
-function polyfillResizeObserver(window) {
+/** Method to polyfill the specified object. */
+function polyfillResizeObserver(obj) {
 	const __CallbackMap: WeakMap<
 		ResizeObserver,
 		ResizeObserverCallback
@@ -190,11 +190,11 @@ function polyfillResizeObserver(window) {
 		})
 	}
 
-	window.DOMRectReadOnly = DOMRectReadOnly
-	window.ResizeObserver = ResizeObserver
-	window.ResizeObserverEntry = ResizeObserverEntry
+	obj.DOMRectReadOnly = DOMRectReadOnly
+	obj.ResizeObserver = ResizeObserver
+	obj.ResizeObserverEntry = ResizeObserverEntry
 
-	return window
+	return obj
 }
 
 
