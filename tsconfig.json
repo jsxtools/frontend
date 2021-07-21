@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "es2020"],
+    "lib": ["dom", "es2021"],
     "skipLibCheck": true
   },
   "includes": [

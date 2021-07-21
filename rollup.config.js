@@ -6,8 +6,8 @@ const { terser } = require('rollup-plugin-terser');
 module.exports = {
 	input: 'src/index.ts',
 	output: [
-		{ file: 'index.js', format: 'cjs', strict: false },
-		{ file: 'index.mjs', format: 'esm', strict: false },
+		{ file: 'index.js', format: 'cjs', strict: false, exports: 'auto' },
+		{ file: 'index.mjs', format: 'esm', strict: false, exports: 'auto' },
 	],
 	plugins: [
 		babel({

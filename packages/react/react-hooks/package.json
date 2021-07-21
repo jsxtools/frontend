@@ -27,6 +27,6 @@
     "@jsxtools/use-promise-factory": "file:../../hooks/use-promise-factory"
   },
   "peerDependencies": {
-    "react": "^16.8"
+    "react": ">= 16.8"
   }
 }

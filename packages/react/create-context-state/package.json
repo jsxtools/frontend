@@ -19,6 +19,6 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^16.8"
+    "react": ">= 16.8"
   }
 }

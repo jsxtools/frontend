@@ -8,14 +8,18 @@
   ],
   "license": "CC0-1.0",
   "scripts": {
-    "bootstrap": "run-s bootstrap:install bootstrap:hoist",
+    "bootstrap": "run-s bootstrap:install bootstrap:hoist bootstrap:install:post:*",
     "bootstrap:install": "lerna exec npm install",
+    "bootstrap:install:post:1": "rm -rf packages/react/create-context-state/node_modules/react*",
+    "bootstrap:install:post:2": "rm -rf packages/react/use-resize-observer/node_modules/react*",
     "bootstrap:hoist": "lerna bootstrap --hoist --strict",
     "build": "run-p build:*",
     "build:dts": "node cmd/dts",
     "build:rollup": "node cmd/rollup",
     "ci": "run-s build 'test --ci'",
     "create": "node cmd/create",
+    "prepare": "run-s prepare:husky bootstrap",
+    "prepare:husky": "husky install",
     "release": "run-s bootstrap build release:*",
     "release:lerna": "lerna publish from-package",
     "test": "run-s test:*",
@@ -35,7 +39,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "ecmaVersion": 10,
+      "ecmaVersion": 12,
       "sourceType": "module",
       "ecmaFeatures": {
         "impliedStrict": true
@@ -45,7 +49,9 @@
       "jest"
     ],
     "rules": {
-      "no-prototype-builtins": 0
+      "no-prototype-builtins": 0,
+      "no-undef": 0,
+      "no-unused-vars": 0
     }
   },
   "husky": {
@@ -67,38 +73,37 @@
       "git add"
     ]
   },
-  "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/preset-env": "7.9.0",
-    "@babel/preset-typescript": "7.9.0",
-    "@types/jest": "25.1.4",
-    "@types/node-fetch": "2.5.5",
-    "@types/react": "16.9.25",
-    "@types/react-dom": "16.9.5",
-    "@types/react-test-renderer": "16.9.2",
-    "@types/resize-observer-browser": "^0.1.3",
-    "@typescript-eslint/parser": "2.24.0",
-    "babel-jest": "25.1.0",
-    "chokidar": "3.3.1",
-    "codecov": "3.6.5",
-    "eslint": "6.8.0",
-    "eslint-plugin-jest": "23.8.2",
-    "gzip-size": "5.1.1",
-    "husky": "4.2.3",
-    "jest": "25.1.0",
-    "lerna": "3.20.2",
-    "lint-staged": "10.0.8",
-    "miniglob": "0.1.1",
-    "node-fetch": "2.6.0",
+    "@babel/core": "7.14.8",
+    "@babel/preset-env": "7.14.8",
+    "@babel/preset-typescript": "7.14.5",
+    "@types/jest": "26.0.24",
+    "@types/node-fetch": "2.5.11",
+    "@types/react": "17.0.14",
+    "@types/react-dom": "17.0.9",
+    "@types/react-test-renderer": "17.0.1",
+    "@types/resize-observer-browser": "0.1.6",
+    "@typescript-eslint/parser": "4.28.4",
+    "babel-jest": "27.0.6",
+    "chokidar": "3.5.2",
+    "codecov": "3.8.3",
+    "eslint": "7.31.0",
+    "eslint-plugin-jest": "24.3.6",
+    "gzip-size": "6.0.0",
+    "husky": "7.0.1",
+    "jest": "27.0.6",
+    "lerna": "4.0.0",
+    "lint-staged": "11.0.1",
+    "miniglob": "0.1.2",
+    "node-fetch": "2.6.1",
     "npm-run-all": "4.1.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-test-renderer": "16.13.1",
-    "rollup": "2.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-test-renderer": "17.0.2",
+    "rollup": "2.53.2",
     "rollup-plugin-babel": "4.4.0",
-    "rollup-plugin-terser": "5.3.0",
-    "typescript": "3.8.3"
+    "rollup-plugin-terser": "7.0.2",
+    "typescript": "4.3.5"
   },
   "private": true
 }

@@ -7,6 +7,7 @@ const exitCode = spawn(
 			'--colors': [],
 			'--coverage': [],
 			'--passWithNoTests': [],
+			'--env': ['jsdom'],
 			...(opts.hasOwnProperty('--ci') ? {} : { '--ci': [], '-u': [] }),
 			...(opts.hasOwnProperty('--watchAll') ? {} : { '--onlyChanged': [] }),
 		}),
